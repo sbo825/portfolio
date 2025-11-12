@@ -21,3 +21,5 @@ node_modules/quansync/
 node_modules/tinyexec/
 node_modules/ufo/
 src/.tailwindcli
+package.json
+package-lock.json

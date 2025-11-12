@@ -1,0 +1,766 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./src/css/output.css" rel="stylesheet">
+  <title>Inicio - Blog</title>
+  <link rel="icon" type="image/x-icon" href="./src/img/Linux-Logo-PNG-Transparent.png">
+</head>
+<body>
+<div class="bg-base-200 flex min-h-screen flex-col">
+    <!-- ---------- HEADER ---------- -->
+    <div class="bg-base-100 border-base-content/20 sticky top-0 z-1 flex border-b lg:ps-75 py-2">
+      <div class="mx-auto w-full max-w-7xl">
+        <nav class="mx-auto w-full px-4" aria-label="Global">
+          <div class="relative md:flex md:items-center">
+            <div class="flex items-center justify-between">
+
+              <a class="link" href=".">
+                <div class="avatar mr-5">
+                  <div class="w-15 rounded-full">
+                    <img src="./src/img/Linux-Logo-PNG-Transparent.png" alt="avatar 1" />
+                  </div>
+                </div>
+              </a>
+
+              <a class="link text-base-content link-neutral text-xl font-bold no-underline whitespace-nowrap" href="." >
+                El rincón de tux
+              </a>
+              <div class="md:hidden">
+                <button type="button" class="collapse-toggle btn btn-outline btn-secondary btn-sm btn-square" data-collapse="#navbar-mega-menu-click" aria-controls="navbar-mega-menu-click" aria-label="Toggle navigation" >
+                  <span class="icon-[tabler--menu-2] collapse-open:hidden size-4"></span>
+                  <span class="icon-[tabler--x] collapse-open:block hidden size-4"></span>
+                </button>
+              </div>
+            </div>
+            <div id="navbar-mega-menu-click" class="collapse hidden grow basis-full overflow-hidden rounded-lg transition-all duration-300 md:block" >
+              <div class="flex flex-col rounded-lg max-md:mt-3 max-md:border max-md:p-2 md:flex-row md:items-center md:justify-end md:ps-5 md:pe-0.5 gap-2 max-md:border-base-content/20" >
+                <!-- Theme Dropdown  -->
+                <div class="dropdown relative inline-flex [--offset:24]">
+                  <button
+                    id="dropdown-theme"
+                    type="button"
+                    class="dropdown-toggle btn btn-sm btn-square btn-text"
+                    aria-haspopup="menu"
+                    aria-expanded="false"
+                    aria-label="Dropdown"
+                  >
+                    <span class="icon-[tabler--sun] size-4.5"></span>
+                  </button>
+                  <ul
+                    class="dropdown-menu dropdown-open:opacity-100 hidden w-full max-w-50"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="dropdown-theme"
+                  >
+                    <li>
+                      <input
+                        type="radio"
+                        name="theme-dropdown"
+                        class="theme-controller btn btn-text w-full justify-start"
+                        aria-label="Light"
+                        value="light"
+                      />
+                    </li>
+                    <li>
+                      <input
+                        type="radio"
+                        name="theme-dropdown"
+                        class="theme-controller btn btn-text w-full justify-start"
+                        aria-label="Dark"
+                        value="dark"
+                      />
+                    </li>
+                    <li>
+                      <input
+                        type="radio"
+                        name="theme-dropdown"
+                        class="theme-controller btn btn-text w-full justify-start"
+                        aria-label="System"
+                        value="default"
+                      />
+                    </li>
+                  </ul>
+                </div>
+                <ul class="menu md:menu-horizontal text-base px-0 max-md:w-fit max-md:py-0 gap-2">
+                  <li><a href="#">Link 1</a></li>
+                  <li><a href="#">Link 2</a></li>
+                </ul>
+                <div class="dropdown [--adaptive:none] [--auto-close:inside] [--mega-menu:true] [--strategy:static] md:[--strategy:absolute]">
+                  <button type="button" class="dropdown-toggle btn btn-text text-base-content/80 dropdown-open:bg-base-content/10 dropdown-open:text-base-content max-md:px-3" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+                    Mega menu
+                    <span class="icon-[tabler--chevron-down] dropdown-open:rotate-180 size-4"></span>
+                  </button>
+                  <div class="dropdown-menu dropdown-open:opacity-100 start-0 top-full hidden w-full min-w-60 rounded-lg py-2 opacity-0 transition-[opacity,margin] duration-[0.1ms] before:absolute max-md:border max-md:shadow-none max-md:border-base-content/20" role="menu" aria-orientation="vertical">
+                    <ul class="menu md:menu-horizontal rounded-box w-full max-xl:gap-4 p-0">
+                      <li>
+                        <a href="#" class="menu-title">Services</a>
+                        <ul class="menu">
+                          <li><a href="#">Design Solutions</a></li>
+                          <li><a href="#">Software Development</a></li>
+                          <li><a href="#">Web Hosting</a></li>
+                          <li><a href="#">Domain Registration</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#" class="menu-title">Corporate Solutions</a>
+                        <ul class="menu">
+                          <li><a href="#">CRM</a></li>
+                          <li><a href="#">Management Solutions</a></li>
+                          <li><a href="#">Security Services</a></li>
+                          <li><a href="#">Consulting Services</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#" class="menu-title">Product Offerings</a>
+                        <ul class="menu">
+                          <li><a href="#">UI Kits</a></li>
+                          <li><a href="#">Component Library</a></li>
+                          <li><a href="#">WordPress Plugins</a></li>
+                          <li>
+                            <a href="#" class="menu-title">Open Source Projects</a>
+                            <ul class="menu">
+                              <li><a href="#">Authentication System</a></li>
+                              <li><a href="#">FlyonUI Theme</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Search Dropdown Content  -->
+    <div
+      id="search-modal"
+      class="overlay modal overlay-open:opacity-100 overlay-open:duration-300 modal-middle hidden"
+      role="dialog"
+      tabindex="-1"
+    >
+      <div class="modal-dialog w-full max-w-145">
+        <div class="modal-content overflow-auto shadow-none">
+          <!-- SearchBox -->
+          <div class="modal-header border-base-content/20 border-b px-3 py-2">
+            <div class="input no-focus border-0 px-0">
+              <span class="icon-[tabler--search] text-base-content/80 my-auto me-2 size-5 shrink-0"></span>
+              <input type="search" class="grow" placeholder="Search here..." id="kbdInput" />
+              <label class="sr-only" for="kbdInput">Search</label>
+            </div>
+          </div>
+
+          <nav class="tabs tabs-bordered py-2" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
+            <button
+              type="button"
+              class="tab active-tab:tab-active active w-full font-medium"
+              id="search-tabs-item-1"
+              data-tab="#search-tabs-1"
+              aria-controls="search-tabs-1"
+              role="tab"
+              aria-selected="true"
+            >
+              All
+            </button>
+            <button
+              type="button"
+              class="tab active-tab:tab-active w-full font-medium"
+              id="search-tabs-item-2"
+              data-tab="#search-tabs-2"
+              aria-controls="search-tabs-2"
+              role="tab"
+              aria-selected="false"
+            >
+              Pages
+            </button>
+            <button
+              type="button"
+              class="tab active-tab:tab-active w-full font-medium"
+              id="search-tabs-item-3"
+              data-tab="#search-tabs-3"
+              aria-controls="search-tabs-3"
+              role="tab"
+              aria-selected="false"
+            >
+              Integration
+            </button>
+            <button
+              type="button"
+              class="tab active-tab:tab-active w-full font-medium"
+              id="search-tabs-item-4"
+              data-tab="#search-tabs-4"
+              aria-controls="search-tabs-4"
+              role="tab"
+              aria-selected="false"
+            >
+              Users
+            </button>
+          </nav>
+          <!-- SearchBox Modal Body -->
+          <div class="max-h-90 overflow-y-auto lg:max-h-121">
+            <!-- SearchBox All Modal Body -->
+            <div id="search-tabs-1" role="tabpanel" aria-labelledby="search-tabs-item-1">
+              <!-- Pages Section -->
+              <div class="modal-body">
+                <div class="text-base-content/50 mb-1.5 text-sm uppercase">Pages</div>
+                <ul class="space-y-1.5">
+                  <li>
+                    <a class="hover:bg-base-200 rounded-field flex items-center gap-2 px-1 py-1.5" href="#">
+                      <span class="icon-[tabler--users] size-6 shrink-0"></span>
+                      <h6 class="font-medium">Marketing UI Page</h6>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="hover:bg-base-200 rounded-field flex items-center gap-2 px-1 py-1.5" href="#">
+                      <span class="icon-[tabler--shopping-cart] size-6 shrink-0"></span>
+                      <h6 class="font-medium">e-commerce UI Page</h6>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="hover:bg-base-200 rounded-field flex items-center gap-2 px-1 py-1.5" href="#">
+                      <span class="icon-[tabler--device-desktop-analytics] size-6 shrink-0"></span>
+                      <h6 class="font-medium">Dashboard UI Page</h6>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="divider"></div>
+              <!-- Interaction Section -->
+              <div class="modal-body">
+                <div class="text-base-content/50 mb-1.5 text-sm uppercase">Interaction</div>
+                <ul class="space-y-1.5">
+                  <li>
+                    <a
+                      class="hover:bg-base-200 rounded-field flex justify-between gap-2 px-1 py-1.5 max-sm:flex-col sm:items-center"
+                      href="#"
+                    >
+                      <div class="flex items-center gap-3">
+                        <div class="avatar avatar-placeholder">
+                          <div class="bg-base-200 size-9.5 rounded-full">
+                            <img
+                              src="https://cdn.flyonui.com/fy-assets/blocks/dashboard-app/dashboard-modals/jira.png"
+                              alt="jira"
+                              class="size-6"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="font-medium">Jira</h6>
+                          <p class="text-base-content/50 text-sm">Project management</p>
+                        </div>
+                      </div>
+                      <div class="avatar-group -space-x-3">
+                        <div class="avatar">
+                          <div class="size-8">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-10.png" alt="avatar" />
+                          </div>
+                        </div>
+                        <div class="avatar">
+                          <div class="size-8">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-12.png" alt="avatar" />
+                          </div>
+                        </div>
+                        <div class="avatar">
+                          <div class="size-8">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-6.png" alt="avatar" />
+                          </div>
+                        </div>
+                        <div class="avatar avatar-placeholder">
+                          <div class="bg-neutral text-neutral-content size-8">
+                            <span>+3</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="hover:bg-base-200 rounded-field flex justify-between gap-2 px-1 py-1.5 max-sm:flex-col sm:items-center"
+                      href="#"
+                    >
+                      <div class="flex items-center gap-3">
+                        <div class="avatar avatar-placeholder">
+                          <div class="bg-base-200 size-9.5 rounded-full">
+                            <img
+                              src="https://cdn.flyonui.com/fy-assets/blocks/dashboard-app/dashboard-modals/inferno.png"
+                              alt="inferno"
+                              class="size-6"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="font-medium">Inferno</h6>
+                          <p class="text-base-content/50 text-sm">Real-time photo sharing app</p>
+                        </div>
+                      </div>
+                      <div class="avatar-group -space-x-3">
+                        <div class="avatar">
+                          <div class="size-8">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-5.png" alt="avatar" />
+                          </div>
+                        </div>
+                        <div class="avatar">
+                          <div class="size-8">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-13.png" alt="avatar" />
+                          </div>
+                        </div>
+                        <div class="avatar">
+                          <div class="size-8">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-7.png" alt="avatar" />
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="divider"></div>
+              <!-- User Section -->
+              <div class="modal-body">
+                <div class="text-base-content/50 mb-1.5 text-sm uppercase">User</div>
+                <ul class="space-y-1.5">
+                  <li>
+                    <div class="hover:bg-base-200 rounded-field flex items-center justify-between gap-2 px-1 py-1.5">
+                      <a href="#" class="flex grow items-center gap-3">
+                        <div class="avatar">
+                          <div class="size-9.5 rounded-full">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-7.png" alt="Amelle Laurent" />
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="font-medium">Amelle Laurent</h6>
+                          <p class="text-base-content/50 text-sm">Amelle@hotmail.com</p>
+                        </div>
+                      </a>
+                      <div class="flex items-center gap-2 max-sm:hidden">
+                        <span class="badge badge-success badge-soft rounded-full">In office</span>
+                        <div class="dropdown relative inline-flex [--placement:bottom-end]">
+                          <button
+                            id="user-dropdown1"
+                            type="button"
+                            class="dropdown-toggle btn btn-text text-base-content btn-circle btn-xs"
+                            aria-haspopup="menu"
+                            aria-expanded="false"
+                            aria-label="Dropdown"
+                          >
+                            <span class="icon-[tabler--dots-vertical] size-4.5"></span>
+                          </button>
+                          <ul
+                            class="dropdown-menu dropdown-open:opacity-100 menu-sm hidden p-1"
+                            role="menu"
+                            aria-orientation="vertical"
+                            aria-labelledby="user-dropdown1"
+                          >
+                            <li><button class="dropdown-item px-2" type="button">View More</button></li>
+                            <li><button class="dropdown-item px-2" type="button">Delete</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="hover:bg-base-200 rounded-field flex items-center justify-between gap-2 px-1 py-1.5">
+                      <a href="#" class="flex grow items-center gap-3">
+                        <div class="avatar">
+                          <div class="size-9.5 rounded-full">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-3.png" alt="Maria Donin" />
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="font-medium">Maria Donin</h6>
+                          <p class="text-base-content/50 text-sm">Maria@hotmail.com</p>
+                        </div>
+                      </a>
+                      <div class="flex items-center gap-2 max-sm:hidden">
+                        <span class="badge badge-error badge-soft rounded-full">On leave</span>
+                        <div class="dropdown relative inline-flex [--placement:bottom-end]">
+                          <button
+                            id="user-dropdown2"
+                            type="button"
+                            class="dropdown-toggle btn btn-text text-base-content btn-circle btn-xs"
+                            aria-haspopup="menu"
+                            aria-expanded="false"
+                            aria-label="Dropdown"
+                          >
+                            <span class="icon-[tabler--dots-vertical] size-4.5"></span>
+                          </button>
+                          <ul
+                            class="dropdown-menu dropdown-open:opacity-100 menu-sm hidden p-1"
+                            role="menu"
+                            aria-orientation="vertical"
+                            aria-labelledby="user-dropdown2"
+                          >
+                            <li><button class="dropdown-item px-2" type="button">View More</button></li>
+                            <li><button class="dropdown-item px-2" type="button">Delete</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- SearchBox Pages Modal Body -->
+            <div id="search-tabs-2" class="hidden" role="tabpanel" aria-labelledby="search-tabs-item-2">
+              <div class="modal-body">
+                <ul class="space-y-1.5">
+                  <li>
+                    <a class="hover:bg-base-200 rounded-field flex items-center gap-2 px-1 py-1.5" href="#">
+                      <span class="icon-[tabler--users] size-6 shrink-0"></span>
+                      <h6 class="font-medium">Marketing UI Page</h6>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="hover:bg-base-200 rounded-field flex items-center gap-2 px-1 py-1.5" href="#">
+                      <span class="icon-[tabler--shopping-cart] size-6 shrink-0"></span>
+                      <h6 class="font-medium">e-commerce UI Page</h6>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="hover:bg-base-200 rounded-field flex items-center gap-2 px-1 py-1.5" href="#">
+                      <span class="icon-[tabler--device-desktop-analytics] size-6 shrink-0"></span>
+                      <h6 class="font-medium">Dashboard UI Page</h6>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- SearchBox Integration Modal Body -->
+            <div id="search-tabs-3" class="hidden" role="tabpanel" aria-labelledby="search-tabs-item-3">
+              <div class="modal-body">
+                <ul class="space-y-1.5">
+                  <li>
+                    <a
+                      class="hover:bg-base-200 rounded-field flex justify-between gap-2 px-1 py-1.5 max-sm:flex-col sm:items-center"
+                      href="#"
+                    >
+                      <div class="flex items-center gap-3">
+                        <div class="avatar avatar-placeholder">
+                          <div class="bg-base-200 size-9.5 rounded-full">
+                            <img
+                              src="https://cdn.flyonui.com/fy-assets/blocks/dashboard-app/dashboard-modals/jira.png"
+                              alt="jira"
+                              class="size-6"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="font-medium">Jira</h6>
+                          <p class="text-base-content/50 text-sm">Project management</p>
+                        </div>
+                      </div>
+                      <div class="avatar-group -space-x-3">
+                        <div class="avatar">
+                          <div class="size-8">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-10.png" alt="avatar" />
+                          </div>
+                        </div>
+                        <div class="avatar">
+                          <div class="size-8">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-12.png" alt="avatar" />
+                          </div>
+                        </div>
+                        <div class="avatar">
+                          <div class="size-8">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-6.png" alt="avatar" />
+                          </div>
+                        </div>
+                        <div class="avatar avatar-placeholder">
+                          <div class="bg-neutral text-neutral-content size-8">
+                            <span>+3</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="hover:bg-base-200 rounded-field flex justify-between gap-2 px-1 py-1.5 max-sm:flex-col sm:items-center"
+                      href="#"
+                    >
+                      <div class="flex items-center gap-3">
+                        <div class="avatar avatar-placeholder">
+                          <div class="bg-base-200 size-9.5 rounded-full">
+                            <img
+                              src="https://cdn.flyonui.com/fy-assets/blocks/dashboard-app/dashboard-modals/inferno.png"
+                              alt="inferno"
+                              class="size-6"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="font-medium">Inferno</h6>
+                          <p class="text-base-content/50 text-sm">Real-time photo sharing app</p>
+                        </div>
+                      </div>
+                      <div class="avatar-group -space-x-3">
+                        <div class="avatar">
+                          <div class="size-8">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-5.png" alt="avatar" />
+                          </div>
+                        </div>
+                        <div class="avatar">
+                          <div class="size-8">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-13.png" alt="avatar" />
+                          </div>
+                        </div>
+                        <div class="avatar">
+                          <div class="size-8">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-7.png" alt="avatar" />
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- SearchBox Users Modal Body -->
+            <div id="search-tabs-4" class="hidden" role="tabpanel" aria-labelledby="search-tabs-item-4">
+              <div class="modal-body">
+                <ul class="space-y-1.5">
+                  <li>
+                    <div class="hover:bg-base-200 rounded-field flex items-center justify-between gap-2 px-1 py-1.5">
+                      <a href="#" class="flex items-center gap-3">
+                        <div class="avatar">
+                          <div class="size-9.5 rounded-full">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-7.png" alt="Amelle Laurent" />
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="font-medium">Amelle Laurent</h6>
+                          <p class="text-base-content/50 text-sm">Amelle@hotmail.com</p>
+                        </div>
+                      </a>
+                      <div class="flex items-center gap-2">
+                        <span class="badge badge-success badge-soft rounded-full">In office</span>
+                        <div class="dropdown relative inline-flex [--placement:bottom-end] max-sm:hidden">
+                          <button
+                            id="user-dropdown3"
+                            type="button"
+                            class="dropdown-toggle btn btn-text text-base-content btn-circle btn-xs"
+                            aria-haspopup="menu"
+                            aria-expanded="false"
+                            aria-label="Dropdown"
+                          >
+                            <span class="icon-[tabler--dots-vertical] size-4.5"></span>
+                          </button>
+                          <ul
+                            class="dropdown-menu dropdown-open:opacity-100 menu-sm hidden p-1"
+                            role="menu"
+                            aria-orientation="vertical"
+                            aria-labelledby="user-dropdown3"
+                          >
+                            <li><button class="dropdown-item px-2">View More</button></li>
+                            <li><button class="dropdown-item px-2">Delete</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="hover:bg-base-200 rounded-field flex items-center justify-between gap-2 px-1 py-1.5">
+                      <a href="#" class="flex items-center gap-3">
+                        <div class="avatar">
+                          <div class="size-9.5 rounded-full">
+                            <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-3.png" alt="Maria Donin" />
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="font-medium">Maria Donin</h6>
+                          <p class="text-base-content/50 text-sm">Maria@hotmail.com</p>
+                        </div>
+                      </a>
+                      <div class="flex items-center gap-2">
+                        <span class="badge badge-error badge-soft rounded-full">On leave</span>
+                        <div class="dropdown relative inline-flex [--placement:bottom-end] max-sm:hidden">
+                          <button
+                            id="user-dropdown4"
+                            type="button"
+                            class="dropdown-toggle btn btn-text text-base-content btn-circle btn-xs"
+                            aria-haspopup="menu"
+                            aria-expanded="false"
+                            aria-label="Dropdown"
+                          >
+                            <span class="icon-[tabler--dots-vertical] size-4.5"></span>
+                          </button>
+                          <ul
+                            class="dropdown-menu dropdown-open:opacity-100 menu-sm hidden p-1"
+                            role="menu"
+                            aria-orientation="vertical"
+                            aria-labelledby="user-dropdown4"
+                          >
+                            <li><button class="dropdown-item px-2" type="button">View More</button></li>
+                            <li><button class="dropdown-item px-2" type="button">Delete</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Footer Commands -->
+          <div class="modal-footer border-base-content/20 text-base-content/50 gap-4 border-t py-4 max-sm:hidden">
+            <div class="flex grow items-center gap-2 text-sm">
+              <kbd class="kbd kbd-sm">esc</kbd>
+              <span>To close</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm">
+              <kbd class="kbd kbd-sm p-0"><span class="icon-[tabler--arrow-back] size-4"></span></kbd>
+              <span>To Select</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm">
+              <kbd class="kbd kbd-sm p-0"><span class="icon-[tabler--arrow-up] size-4"></span></kbd>
+              <kbd class="kbd kbd-sm p-0"><span class="icon-[tabler--arrow-down] size-4"></span></kbd>
+              <span>To Navigate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ---------- END HEADER ---------- -->
+
+    <!-- ---------- MAIN SIDEBAR ---------- -->
+
+    <!--
+
+    Aside original
+
+    <aside
+      id="layout-toggle"
+      class="overlay overlay-open:translate-x-0 drawer drawer-start inset-y-0 start-0 hidden h-full [--auto-close:lg] sm:w-75 lg:z-50 lg:block lg:translate-x-0 lg:shadow-none"
+      aria-label="Sidebar"
+      tabindex="-1"
+    >
+
+    </aside>
+    -->
+<aside id="collapsible-sidebar" class="overlay [--body-scroll:true] border-base-content/20 overlay-open:translate-x-0 drawer drawer-start sm:overlay-layout-open:translate-x-0 hidden sm:w-75 border-e [--auto-close:sm] [--is-layout-affect:true] [--opened:lg] sm:absolute sm:z-2 sm:flex sm:shadow-none lg:[--overlay-backdrop:false] fixed! left-0! top-0! h-full!" role="dialog" tabindex="-1" >
+
+
+    <div class="drawer-body px-2 pt-4">
+      <ul class="menu p-0">
+        <li>
+          <a href="#">
+            <span class="icon-[tabler--home] size-5"></span>
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="icon-[tabler--user] size-5"></span>
+            Account
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="icon-[tabler--message] size-5"></span>
+            Notifications
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="icon-[tabler--mail] size-5"></span>
+            Email
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="icon-[tabler--calendar] size-5"></span>
+            Calendar
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="icon-[tabler--shopping-bag] size-5"></span>
+            Product
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="icon-[tabler--login] size-5"></span>
+            Sign In
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="icon-[tabler--logout-2] size-5"></span>
+            Sign Out
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <div class="sm:overlay-layout-open:ps-64 min-h-full transition-all duration-300">
+    <!-- Navigation Toggle -->
+    <div class="px-2 pt-2 lg:hidden">
+      <button type="button" class="btn btn-text btn-square bg-base-100" aria-haspopup="dialog" aria-expanded="false" aria-controls="collapsible-sidebar" data-overlay="#collapsible-sidebar" >
+        <span class="icon-[tabler--menu-2] size-5"></span>
+      </button>
+    </div>
+    <!-- End Navigation Toggle -->
+  </div>
+
+
+    <!-- ---------- END MAIN SIDEBAR ---------- -->
+    <div class="flex grow flex-col lg:ps-75">
+      <!-- ---------- MAIN CONTENT ---------- -->
+      <main class="mx-auto w-full max-w-7xl flex-1 p-6">
+        <div class="grid grid-cols-1 gap-6 z-0">
+          <div class="card h-240 w-full">
+            <div class="card-body border-base-content/20 rounded-box skeleton-striped m-6 border"></div>
+          </div>
+        </div>
+      </main>
+      <!-- ---------- END MAIN CONTENT ---------- -->
+
+      <!-- ---------- FOOTER CONTENT ---------- -->
+      <footer class="bg-base-100">
+        <div class="mx-auto h-20 pt-7 w-full max-w-7xl px-6">
+          <div class="flex w-full flex-wrap items-center justify-between">
+            <div class="flex items-center gap-2 text-xl font-bold text-base-content">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M17.6745 16.9224L12.6233 10.378C12.2167 9.85117 11.4185 9.8611 11.0251 10.3979L6.45728 16.631C6.26893 16.888 5.96935 17.0398 5.65069 17.0398H3.79114C2.9635 17.0398 2.49412 16.0919 2.99583 15.4336L11.0224 4.90319C11.4206 4.38084 12.2056 4.37762 12.608 4.89668L20.9829 15.6987C21.4923 16.3558 21.024 17.3114 20.1926 17.3114H18.4661C18.1562 17.3114 17.8638 17.1677 17.6745 16.9224ZM12.5866 15.5924L14.8956 18.3593C15.439 19.0105 14.976 20 14.1278 20H9.74075C8.9164 20 8.4461 19.0586 8.94116 18.3994L11.0192 15.6325C11.4065 15.1169 12.1734 15.0972 12.5866 15.5924Z"
+                  fill="var(--color-primary)"
+                /></svg>
+              <span>FlyonUI</span>
+            </div>
+            <aside class="grid-flow-col items-center">
+              <p> ©2024 <a class="link link-hover font-medium" href="#">FlyonUI</a> </p>
+            </aside>
+            <div class="flex h-5 gap-4">
+              <a href="#" class="link" aria-label="Github Link">
+                <span class="icon-[tabler--brand-github] size-5"></span>
+              </a>
+              <a href="#" class="link" aria-label="Facebook Link">
+                <span class="icon-[tabler--brand-facebook] size-5"></span>
+              </a>
+              <a href="#" class="link" aria-label="X Link">
+                <span class="icon-[tabler--brand-x] size-5"></span>
+              </a>
+              <a href="#" class="link" aria-label="Google Link">
+                <span class="icon-[tabler--brand-google] size-5"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- ---------- END FOOTER CONTENT ---------- -->
+    </div>
+  </div>
+<script src="./node_modules/flyonui/flyonui.js"></script>
+</body>
+</html>
