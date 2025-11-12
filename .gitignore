@@ -1,0 +1,23 @@
+# Ignorar node_modules específicos y otros directorios
+node_modules/.bin/acorn
+node_modules/@antfu/
+node_modules/@floating-ui/
+node_modules/@iconify-json/
+node_modules/@iconify/
+node_modules/acorn/
+node_modules/confbox/
+node_modules/debug/
+node_modules/exsolve/
+node_modules/flyonui/
+node_modules/globals/
+node_modules/kolorist/
+node_modules/local-pkg/
+node_modules/mlly/
+node_modules/ms/
+node_modules/package-manager-detector/
+node_modules/pathe/
+node_modules/pkg-types/
+node_modules/quansync/
+node_modules/tinyexec/
+node_modules/ufo/
+src/.tailwindcli
