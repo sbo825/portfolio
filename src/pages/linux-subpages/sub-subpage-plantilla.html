@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./src/css/output.css" rel="stylesheet">
-  <link rel="stylesheet" href="./src/css/font.css">
-  <title>Inicio - Blog</title>
-  <link rel="icon" type="image/x-icon" href="./src/img/Linux-Logo-PNG-Transparent.png">
+  <link href="../../css/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/font.css">
+  <title>Linux</title>
+  <link rel="icon" type="image/x-icon" href="../../img/Linux-Logo-PNG-Transparent.png">
 </head>
 <body>
 <div class="bg-base-200 flex min-h-screen flex-col">
-
   <!-- ---------- HEADER ---------- -->
   <div class="bg-base-100 border-base-content/20 sticky top-0 z-1 flex border-b lg:ps-75 py-2">
     <div class="mx-auto w-full max-w-7xl">
@@ -18,14 +17,14 @@
         <div class="flex items-center w-full">
           <!-- LOGO + TÍTULO -->
           <div class="flex items-center">
-            <a class="link" href=".">
+            <a class="link" href="../../../">
               <div class="avatar mr-5">
                 <div class="w-15 rounded-full">
-                  <img src="./src/img/Linux-Logo-PNG-Transparent.png" alt="avatar 1" />
+                  <img src="../../img/Linux-Logo-PNG-Transparent.png" alt="avatar 1" />
                 </div>
               </div>
             </a>
-            <a class="link text-base-content link-neutral text-xl font-bold no-underline whitespace-nowrap" href=".">
+            <a class="link text-base-content link-neutral text-xl font-bold no-underline whitespace-nowrap" href="../../../">
               El rincón de Tux
             </a>
           </div>
@@ -53,7 +52,6 @@
       </nav>
     </div>
   </div>
-
 
     <!-- ---------- END HEADER ---------- -->
 
@@ -84,13 +82,13 @@
     <div class="drawer-body px-2 pt-5">
       <ul class="menu p-0">
         <li>
-          <a href="#" class="flex items-center gap-4">
+          <a href="../../../" class="flex items-center gap-4">
             <span class="icon-[tabler--home] size-5"></span>
             Inicio
           </a>
         </li>
         <li>
-          <a href="./src/pages/linux.html" class="flex items-center gap-4">
+          <a href="#" class="flex items-center gap-4">
             <span class="icon-[tabler--book] size-5"></span>
             Linux
           </a>
@@ -146,7 +144,7 @@
               <!-- Banner -->
               <div class="w-full">
                 <img 
-                  src="./src/img/linux-banner.png" 
+                  src="../../img/apache2-banner.png" 
                   alt="banner" 
                   class="w-full h-40 sm:h-52 md:h-60 lg:h-72 object-cover rounded-box"
                 />
@@ -157,7 +155,7 @@
 
                 <!-- Título -->
                 <h1 class="text-3xl font-bold text-base-content">
-                  El rincón de Tux - Blog de informática
+                  Instalación y configuración de Apache2
                 </h1>
 
                 <!-- Separación -->
@@ -166,32 +164,29 @@
                 <!-- Texto de contenido -->
                 <div class="prose max-w-none text-justify text-lg">
                   <p>
-                    Este es tu espacio para aprender, experimentar y profundizar en el fascinante mundo del software libre 
-                    y la administración de sistemas. Aquí encontrarás guías y artículos pensados para ayudarte a mejorar tus 
-                    habilidades con Linux, fortalecer tus conocimientos en ciberseguridad, y sacarle el máximo partido a herramientas 
-                    esenciales como Proxmox y Ansible.
+                    En esta sección descubrirás guías prácticas y detalladas para explorar todo lo que Linux tiene 
+                    para ofrecer. Aprenderás a configurar, optimizar y dominar tu entorno de manera progresiva, con 
+                    artículos pensados tanto para principiantes como para usuarios avanzados. Cada guía está diseñada 
+                    para que aprendas haciendo, experimentando y entendiendo cómo funcionan las cosas detrás de tu sistema, 
+                    convirtiendo Linux en un verdadero laboratorio de conocimiento y práctica.
                   </p>
                   <br>
-                  <p>
-                    Mi objetivo es crear un rincón donde puedas resolver dudas, descubrir nuevas formas de automatizar tu trabajo, 
-                    optimizar tus entornos y, sobre todo, disfrutar del proceso de aprender. Tanto si estás dando tus primeros 
-                    pasos como si ya tienes experiencia, espero que aquí encuentres contenido útil, claro y práctico.
-                  </p>
+                  <hr class="border-base-content/10" />
                   <br>
-                  <p>
-                    Explora, prueba, rompe, arregla… y vuelve cuando quieras.<br>
-                    Este es tu rincón. El Rincón de Tux.
-                  </p>
-                  <br>
-                  <p>
-                    Empieza a explorar, entra a una guía o artículo aleatorio:
-                  </p>
-                  <br>
-                  <button class="btn btn-gradient btn-primary rounded-full" onclick="irASubpaginaAleatoria()">Página aleatoria</button>
+                  
+                  <div class="card sm:card-side max-w-sm sm:max-w-full">
+                    <figure class="flex-shrink-0 w-2/4 sm:w-1/4 lg:w-1/5 mx-auto bg-secondary"><img src="../../img/apache2.png" class="w-full h-auto object-contain"/></figure>
+                    <div class="card-body bg-secondary flex-1 rounded-r-box">
+                      <h5 class="card-title mb-0.5"><a class="link text-secondary-content" href=".">Apache2 - Servidor web</a></h5>
+                      <p class="mb-2 text-secondary-content">Apache2 es un servidor web de código abierto que permite alojar y servir sitios web, gestionando las solicitudes de los navegadores y entregando el contenido de forma segura y eficiente.</p>
+                      <div class="card-actions">
+                        <button class="btn btn-primary" onclick="window.location.href='.'">Acceder</button>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
@@ -199,11 +194,11 @@
       <!-- ---------- END MAIN CONTENT ---------- -->
 
       <!-- ---------- FOOTER CONTENT ---------- -->
-      <footer class="bg-base-100 w-full">
+      <footer class="bg-base-100 w-full pb-5 sm:pb-0">
         <div class="h-25 pt-8 w-full xl:max-w-7xl mx-auto px-6">
           <div class="flex w-full flex-wrap items-center justify-between gap-4">
             <div class="flex items-center gap-2 text-xl font-bold text-base-content">
-              <img src="./src/img/Linux-Logo-PNG-Transparent.png" class="w-10" alt="avatar 1" />
+              <img src="../../img/Linux-Logo-PNG-Transparent.png" class="w-10" alt="avatar 1" />
               <span>El rincón de Tux</span>
             </div>
             <aside class="grid-flow-col items-center">
@@ -251,8 +246,7 @@
     </div>
   </div>
 
-<script src="./node_modules/flyonui/flyonui.js"></script>
-<script src="./src/js/random_button.js"></script>
-<script src="./src/js/modal.js"></script>
+<script src="../../../node_modules/flyonui/flyonui.js"></script>
+<script src="../../js/modal.js"></script>
 </body>
 </html>

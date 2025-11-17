@@ -20,6 +20,11 @@ node_modules/pkg-types/
 node_modules/quansync/
 node_modules/tinyexec/
 node_modules/ufo/
+node_modules/
 src/.tailwindcli
 package.json
 package-lock.json
+src/pages/icons.html
+src/font/
+plantilla.html
+src/pages/subpage-plantilla.html

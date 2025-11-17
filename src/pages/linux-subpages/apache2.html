@@ -1,0 +1,488 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../css/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/font.css">
+  <title>Linux</title>
+  <link rel="icon" type="image/x-icon" href="../../img/Linux-Logo-PNG-Transparent.png">
+</head>
+<body>
+<div class="bg-base-200 flex min-h-screen flex-col">
+  <!-- ---------- HEADER ---------- -->
+  <div class="bg-base-100 border-base-content/20 sticky top-0 z-1 flex border-b lg:ps-75 py-2">
+    <div class="mx-auto w-full max-w-7xl">
+      <nav class="mx-auto w-full px-4" aria-label="Global">
+        <div class="flex items-center w-full">
+          <!-- LOGO + TÍTULO -->
+          <div class="flex items-center">
+            <a class="link" href="../../../">
+              <div class="avatar mr-5">
+                <div class="w-15 rounded-full">
+                  <img src="../../img/Linux-Logo-PNG-Transparent.png" alt="avatar 1" />
+                </div>
+              </div>
+            </a>
+            <a class="link text-base-content link-neutral text-xl font-bold no-underline whitespace-nowrap" href="../../../">
+              El rincón de Tux
+            </a>
+          </div>
+          <!-- BOTÓN TEMA (A LA DERECHA DEL TODO) -->
+          <div class="dropdown relative inline-flex ml-auto [--offset:24]">
+            <button id="dropdown-theme" type="button" class="dropdown-toggle btn btn-lg btn-square btn-text" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+              <span class="icon-[tabler--sun] size-6"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-open:opacity-100 hidden w-full max-w-50"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="dropdown-theme">
+              <li>
+                <input type="radio" name="theme-dropdown" class="theme-controller btn btn-text w-full justify-start" aria-label="Light" value="light" />
+              </li>
+              <li>
+                <input type="radio" name="theme-dropdown" class="theme-controller btn btn-text w-full justify-start" aria-label="Dark" value="dark" />
+              </li>
+              <li>
+                <input type="radio" name="theme-dropdown" class="theme-controller btn btn-text w-full justify-start" aria-label="System" value="default" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+    <!-- ---------- END HEADER ---------- -->
+
+    <!-- ---------- MAIN SIDEBAR ---------- -->
+
+    <!--
+
+    Aside original
+
+    <aside
+      id="layout-toggle"
+      class="overlay overlay-open:translate-x-0 drawer drawer-start inset-y-0 start-0 hidden h-full [--auto-close:lg] sm:w-75 lg:z-50 lg:block lg:translate-x-0 lg:shadow-none"
+      aria-label="Sidebar"
+      tabindex="-1"
+    >
+
+    </aside>
+    -->
+<aside id="collapsible-sidebar" class="overlay [--body-scroll:true] border-base-content/20 overlay-open:translate-x-0 drawer drawer-start sm:overlay-layout-open:translate-x-0 hidden w-[80%] sm:w-[75%] border-e [--auto-close:sm] [--is-layout-affect:true] [--opened:lg] sm:absolute sm:z-2 sm:flex sm:shadow-none lg:[--overlay-backdrop:false] lg:w-[20%] fixed! left-0! top-0! h-full!" role="dialog" tabindex="-1" >
+
+    <div class="px-2 pt-6 pb-5">
+      <ul class="menu p-0">
+        <li class="text-2xl pl-[4%]">
+            Árbol de directorios
+        </li>
+      </ul>
+    </div>
+    <div class="drawer-body px-2 pt-5">
+      <ul class="menu p-0">
+        <li>
+          <a href="../../../" class="flex items-center gap-4">
+            <span class="icon-[tabler--home] size-5"></span>
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a href="../linux.html" class="flex items-center gap-4">
+            <span class="icon-[tabler--book] size-5"></span>
+            Linux
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-4">
+            <span class="icon-[tabler--device-desktop-analytics] size-5"></span>
+            Ciberseguridad
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-4">
+            <span class="icon-[tabler--users-group] size-5"></span>
+            Proxmox
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-4">
+            <span class="icon-[tabler--files] size-5"></span>
+            Ansible
+          </a>
+        </li>
+        <li>
+        <a class="flex items-center gap-4" aria-haspopup="dialog" aria-expanded="false" aria-controls="body-scroll-modal" data-overlay="#body-scroll-modal">
+          <span class="icon-[tabler--logout-2] size-5"></span>
+          Repositorio
+        </a>
+          
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <div class="sm:overlay-layout-open:ps-64 min-h-full transition-all duration-300">
+    <!-- Navigation Toggle -->
+    <div class="px-2 pt-2 lg:hidden">
+      <button type="button" class="btn btn-text btn-square bg-base-100" aria-haspopup="dialog" aria-expanded="false" aria-controls="collapsible-sidebar" data-overlay="#collapsible-sidebar" >
+        <span class="icon-[tabler--menu-2] size-5"></span>
+      </button>
+    </div>
+    <!-- End Navigation Toggle -->
+  </div>
+
+
+    <!-- ---------- END MAIN SIDEBAR ---------- -->
+    <div class="flex grow flex-col pl-0 lg:pl-[min(20%,300px)]">
+      <!-- ---------- MAIN CONTENT ---------- -->
+      <main class="mx-auto w-full max-w-7xl flex-1 p-6">
+        <div class="grid grid-cols-1 gap-6 z-0">
+          <div class="card min-h-240 w-full">
+            <div class="card-body border-base-content/20 rounded-box m-6 border">
+
+              <!-- Banner -->
+              <div class="w-full">
+                <img 
+                  src="../../img/apache2-banner.png" 
+                  alt="banner" 
+                  class="w-full h-40 sm:h-52 md:h-60 lg:h-72 object-cover rounded-box"
+                />
+              </div>
+
+              <!-- Contenido interno -->
+              <div class="p-6 space-y-6">
+
+                <!-- Título -->
+                <h1 class="text-3xl font-bold text-base-content">
+                  Instalación y configuración de Apache2
+                </h1>
+
+                <!-- Autor -->
+                <div class="flex items-center gap-3 text-base-content/80">
+                  <span class="icon-[tabler--user] size-5"></span>
+                  <span class="font-medium">Saúl Baena Osuna</span>
+                </div>
+
+                <!-- Separación -->
+                <hr class="border-base-content/10" />
+
+                <!-- Texto de contenido -->
+                <div class="prose max-w-none text-justify text-lg">
+                  <p>
+                    En esta guía vamos a instalar y configurar Apache2, uno de los servidores web más utilizados en el mundo. 
+                    Aprenderás cómo ponerlo en marcha en tu sistema, entender su estructura básica y ajustar los elementos 
+                    esenciales para que puedas alojar tus propios sitios o servicios web. El objetivo es que, al finalizar, 
+                    tengas un servidor funcional y conozcas los fundamentos necesarios para adaptarlo a tus necesidades, ya sea para 
+                    proyectos personales, pruebas en un entorno local o despliegues más completos.
+                    <br><br>
+                    Antes de empezar asegurate de que tienes un servidor con una IP fija recomendablemente.
+                  </p>
+                  <br>
+                  <hr class="border-base-content/10" />
+                  <br>
+                  
+
+                <!-- PASO 1 - GUÍA -->
+                <h2 class="text-2xl font-bold text-base-content pb-3">
+                  Paso 1 - Instalación y activación del servicio Apache2
+                </h2>
+                <div>
+                  <p class="pb-2">
+                    En este paso vamos a usar los siguientes comandos para poder actualizar paquetes e instalar apache2:
+                  </p>
+
+                  <div class="rounded-box flex min-w-60 items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black">
+                    <code>
+                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo apt update -y</span>
+                    </code>
+                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
+                      <span class="tooltip-toggle flex items-center justify-center">
+                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
+                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
+                      </span>
+                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
+                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
+                      </span>
+                    </button>
+                  </div>
+                  <br>
+                  <div class="rounded-box flex min-w-60 items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black">
+                    <code>
+                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo apt install apache2 -y</span>
+                    </code>
+                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
+                      <span class="tooltip-toggle flex items-center justify-center">
+                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
+                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
+                      </span>
+                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
+                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
+                      </span>
+                    </button>
+                  </div>
+
+                  <p class="pt-5 pb-2">
+                    Ahora comprobaremos el estatus del servicio de apache2, lo iniciaremos y lo habilitaremos para que se ejecute automáticamente en el inicio:
+                  </p>
+                </div>
+
+                  <div class="rounded-box flex min-w-60 items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black">
+                    <code>
+                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo systemctl status apache2</span>
+                    </code>
+                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
+                      <span class="tooltip-toggle flex items-center justify-center">
+                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
+                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
+                      </span>
+                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
+                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
+                      </span>
+                    </button>
+                  </div>
+                  <br>
+                  <div class="rounded-box flex min-w-60 items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black">
+                    <code>
+                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo systemctl start apache2</span>
+                    </code>
+                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
+                      <span class="tooltip-toggle flex items-center justify-center">
+                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
+                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
+                      </span>
+                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
+                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
+                      </span>
+                    </button>
+                  </div>
+                  <br>
+                  <div class="rounded-box flex min-w-60 items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black">
+                    <code>
+                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo systemctl enable apache2</span>
+                    </code>
+                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
+                      <span class="tooltip-toggle flex items-center justify-center">
+                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
+                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
+                      </span>
+                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
+                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
+                      </span>
+                    </button>
+                  </div>
+
+                <!-- PASO 2 - GUÍA -->
+                <h2 class="text-2xl font-bold text-base-content pb-3 pt-10">
+                  Paso 2 - Creación de host virtual
+                </h2>
+                <div>
+                  <p class="pb-2">
+                    Vamos a crear una copia del directorio web de ejemplo, en ese directoriose guardará el contenido del servidor web, ahí es donde se pondrían los archivos de nuestra página web:
+                  </p>
+
+                  <div class="rounded-box flex min-w-60 items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black">
+                    <code>
+                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">cp -r /var/www/html /var/www/mi-web</span>
+                    </code>
+                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
+                      <span class="tooltip-toggle flex items-center justify-center">
+                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
+                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
+                      </span>
+                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
+                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
+                      </span>
+                    </button>
+                  </div>
+
+                  <p class="pt-5 pb-2">
+                    Ahora vamos a copiar el fichero de configuración por defecto de apache2 para poder configurar nuestro servidor web:
+                  </p>
+
+                  <div class="rounded-box flex min-w-60 items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black">
+                    <code>
+                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">cd /etc/apache2/sites-available</span>
+                    </code>
+                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
+                      <span class="tooltip-toggle flex items-center justify-center">
+                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
+                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
+                      </span>
+                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
+                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
+                      </span>
+                    </button>
+                  </div>
+                  <br>
+                  <div class="rounded-box flex min-w-60 items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black">
+                    <code>
+                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">cp 000-default.conf mi-server.conf</span>
+                    </code>
+                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
+                      <span class="tooltip-toggle flex items-center justify-center">
+                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
+                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
+                      </span>
+                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
+                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
+                      </span>
+                    </button>
+                  </div>
+
+                  <p class="pt-5 pb-2">
+                    Entraremos al fichero de configuración del host virtual de apache2 y editaremos el contenido según el fichero de abajo, reemplazando por los datos necesarios, en la guía se usa el puerto por defecto, y datos de ejemplo:
+                  </p>
+
+                  <div class="rounded-box flex min-w-60 items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black">
+                    <code>
+                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">nano mi-server.conf</span>
+                    </code>
+                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
+                      <span class="tooltip-toggle flex items-center justify-center">
+                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
+                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
+                      </span>
+                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
+                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
+                      </span>
+                    </button>
+                  </div>
+                  <br>
+                  <div class="mockup-code">
+                    <pre data-prefix="1"><code>&lt;VirtualHost *:80&gt;</code></pre>
+                    <pre data-prefix="2"><code>   # Dirección de correo del administrador/contacto de la web</code></pre>
+                    <pre data-prefix="3"><code>   ServerAdmin webmaster@localhost</code></pre>
+                    <pre data-prefix="4"><code>   # Ruta al fichero raíz de la web, si se deja vacío se interpretará que el fichero se llama "index.html"</code></pre>
+                    <pre data-prefix="5"><code>   DocumentRoot /var/www/mi-web/(nombre del fichero raiz o vacío)</code></pre>
+                    <pre data-prefix="6"><code>   # En este campo se indicará el nombre de dominio que se va a usar para acceder a la web,</code></pre>
+                    <pre data-prefix="7"><code>   # si no se pone se tendrá que acceder con la ip especificada en la linea 1, en este caso la ip del server.</code></pre>
+                    <pre data-prefix="8"><code>   ServerName ejemplo.com</code></pre>
+                    <pre data-prefix="9"><code>   # Configuraciones extras para el servidor web...</code></pre>
+                    <pre data-prefix="1"><code>&lt;VirtualHost&gt;</code></pre>
+                  </div>
+                </div>
+
+                <!-- PASO 3 - GUÍA -->
+                <h2 class="text-2xl font-bold text-base-content pb-3 pt-10">
+                  Paso 3 - Habilitar el sitio y aplicar cambios
+                </h2>
+                <div>
+                  <p class="pb-2">
+                    Antes de acabar hay que habilitar el sitio web para que sea accesible:
+                  </p>
+
+                  <div class="rounded-box flex min-w-60 items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black">
+                    <code>
+                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo a2ensite mi-server.conf</span>
+                    </code>
+                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
+                      <span class="tooltip-toggle flex items-center justify-center">
+                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
+                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
+                      </span>
+                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
+                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
+                      </span>
+                    </button>
+                  </div>
+                  <p class="pb-2 pt-5">
+                    Y por último vamos a aplicar todos los cambios, esto se hace reiniciando el servicio de apache2, y si todo ha salido bien ya tendremos listo nuestro servidor web:
+                  </p>
+
+                  <div class="rounded-box flex min-w-60 items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black">
+                    <code>
+                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo systemctl restart apache2</span>
+                    </code>
+                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
+                      <span class="tooltip-toggle flex items-center justify-center">
+                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
+                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
+                      </span>
+                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
+                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
+                      </span>
+                    </button>
+                  </div>
+                  <p class="pt-5">
+                    Con esto nuestra web ya debería de estar accesible a través del navegador web, accede desde del dominio o IP según tu configuración.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- ---------- END MAIN CONTENT ---------- -->
+
+      <!-- ---------- FOOTER CONTENT ---------- -->
+      <footer class="bg-base-100 w-full pb-5 sm:pb-0">
+        <div class="h-25 pt-8 w-full xl:max-w-7xl mx-auto px-6">
+          <div class="flex w-full flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-2 text-xl font-bold text-base-content">
+              <img src="../../img/Linux-Logo-PNG-Transparent.png" class="w-10" alt="avatar 1" />
+              <span>El rincón de Tux</span>
+            </div>
+            <aside class="grid-flow-col items-center">
+              <p> ©2025 <a class="link link-hover font-medium" target="_blank" href="https://ayanamiserver.com">ayanamiserver.com</a> </p>
+            </aside>
+            <div class="flex h-5 gap-4">
+              <a href="https://github.com/sbo825" class="link" target="_blank" aria-label="Github Link">
+                <span class="icon-[tabler--brand-github] size-5"></span>
+              </a>
+              <a href="https://www.linkedin.com/in/saúl-baena" class="link" target="_blank" aria-label="Linkedin Link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M5 3c0 1.062-.71 1.976-2.001 1.976C1.784 4.976 1 4.114 1 3.052C1 1.962 1.76 1 3 1s1.976.91 2 2M1 19V6h4v13zm6-8.556c0-1.545-.051-2.836-.102-3.951h3.594l.178 1.723h.076c.506-.811 1.746-2 3.822-2C17.1 6.216 19 7.911 19 11.558V19h-4v-6.861c0-1.594-.607-2.81-2-2.81c-1.062 0-1.594.86-1.873 1.569c-.102.254-.127.608-.127.963V19H7z"/></svg>
+              </a>
+              <a href="https://mailto:sbo.contacto@gmail.com" class="link" target="_blank" aria-label="Google Link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64L12 9.548l6.545-4.91l1.528-1.145C21.69 2.28 24 3.434 24 5.457"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- ---------- END FOOTER CONTENT ---------- -->
+    </div>
+  </div>
+
+  <div id="body-scroll-modal" class="overlay modal overlay-open:opacity-100 overlay-open:duration-300 modal-middle hidden [--body-scroll:true] [--auto-close:sm]" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Página externa</h3>
+          <button type="button" class="btn btn-text btn-circle btn-sm absolute end-3 top-3" aria-label="Close" data-overlay="#body-scroll-modal">
+            <span class="icon-[tabler--x] size-4"></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="text-justify">
+            Este enlace te llevará al repositorio, una página externa a este blog.
+            <br><br>
+            ¿Estás seguro/a de que quieres salir?
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-overlay="#body-scroll-modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" onclick="window.open('https://ayanamiserver.com', '_blank')" target="_blank">Salir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="../../../node_modules/flyonui/flyonui.js"></script>
+<script src="../../../node_modules/clipboard/dist/clipboard.min.js"></script>
+<script src="../../../node_modules/flyonui/dist/helper-clipboard.js"></script>
+<script src="../../js/modal.js"></script>
+</body>
+</html>
