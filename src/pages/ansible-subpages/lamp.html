@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../../css/output.css" rel="stylesheet">
   <link rel="stylesheet" href="../../css/font.css">
-  <title>Apache2</title>
+  <title>LAMP</title>
   <link rel="icon" type="image/x-icon" href="../../img/Linux-Logo-PNG-Transparent.png">
 </head>
 <body>
@@ -138,7 +138,7 @@
               <!-- Banner -->
               <div class="w-full">
                 <img 
-                  src="../../img/linux/apache2-banner.png" 
+                  src="../../img/ansible/lamp-subpage-banner.jpg" 
                   alt="banner" 
                   class="w-full h-40 sm:h-52 md:h-60 lg:h-72 object-cover rounded-box"
                 />
@@ -149,7 +149,7 @@
 
                 <!-- Título -->
                 <h1 class="text-3xl font-bold text-base-content">
-                  Instalación y configuración de Apache2
+                  Instalación de servidor LAMP con Ansible
                 </h1>
 
                 <!-- Autor -->
@@ -164,13 +164,20 @@
                 <!-- Texto de contenido -->
                 <div class="prose max-w-none text-justify text-lg">
                   <p>
-                    En esta guía vamos a instalar y configurar Apache2, uno de los servidores web más utilizados en el mundo. 
-                    Aprenderás cómo ponerlo en marcha en tu sistema, entender su estructura básica y ajustar los elementos 
-                    esenciales para que puedas alojar tus propios sitios o servicios web. El objetivo es que, al finalizar, 
-                    tengas un servidor funcional y conozcas los fundamentos necesarios para adaptarlo a tus necesidades, ya sea para 
-                    proyectos personales, pruebas en un entorno local o despliegues más completos.
+                    En esta guía aprenderemos a desplegar un entorno LAMP utilizando un playbook de Ansible, 
+                    aprovechando la automatización para realizar una instalación completa, ordenada y reproducible. 
+                    Veremos cómo Ansible ejecuta cada tarea de forma consistente, evitando errores manuales y 
+                    simplificando todo el proceso de configuración. Al finalizar, tendrás un entorno LAMP funcional y 
+                    un playbook listo para reutilizar en futuros despliegues o adaptarlo a tus propias necesidades.
                     <br><br>
-                    Antes de empezar asegurate de que tienes un servidor con una IP fija recomendablemente.
+                    Antes de empezar asegurate de que tienes un sistema con una IP fija recomendablemente.
+                    <br>
+                    Usaremos el Playbook encontrado en el repositorio.
+                    <br><br>
+                    Prerrequisitos:
+                    <br>
+                      - Tener instalado el paquete unzip
+                      - Tener copiadas entre las máquinas las claves ssh, según dicta el README del archivo del repositorio que descargamos en esta guía
                   </p>
                   <br>
                   <hr class="border-base-content/10" />
@@ -179,11 +186,11 @@
 
                 <!-- PASO 1 - GUÍA -->
                 <h2 class="text-2xl font-bold text-base-content pb-3">
-                  Paso 1 - Instalación y activación del servicio Apache2
+                  Paso 1 - Instalación y preparación del entorno para Ansible en la máquina instaladora
                 </h2>
                 <div>
                   <p class="pb-2">
-                    En este paso vamos a usar los siguientes comandos para poder actualizar paquetes e instalar apache2:
+                    En este paso vamos a usar los siguientes comandos para poder instalar Ansible:
                   </p>
 
                   <div class="rounded-box flex w-full max-w-full items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black text-left">
@@ -205,7 +212,7 @@
                   <div class="rounded-box flex w-full max-w-full items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black text-left">
                     <code>
                       <span class="text-green-500 me-2 text-lg font-medium">$</span>
-                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo apt install apache2 -y</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo apt install ansible -y</span>
                     </code>
                     <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
                       <span class="tooltip-toggle flex items-center justify-center">
@@ -219,14 +226,14 @@
                   </div>
 
                   <p class="pt-5 pb-2">
-                    Ahora comprobaremos el estatus del servicio de apache2, lo iniciaremos y lo habilitaremos para que se ejecute automáticamente en el inicio:
+                    Ahora descargaremos el playbook del repositorio y lo descomprimimos:
                   </p>
                 </div>
 
                   <div class="rounded-box flex w-full max-w-full items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black text-left">
                     <code>
                       <span class="text-green-500 me-2 text-lg font-medium">$</span>
-                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo systemctl status apache2</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo wget https://repo.ayanamiserver.com/repo/ansible/LAMP_server.zip</span>
                     </code>
                     <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
                       <span class="tooltip-toggle flex items-center justify-center">
@@ -242,7 +249,7 @@
                   <div class="rounded-box flex w-full max-w-full items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black text-left">
                     <code>
                       <span class="text-green-500 me-2 text-lg font-medium">$</span>
-                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo systemctl start apache2</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">unzip LAMP_server.zip</span>
                     </code>
                     <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
                       <span class="tooltip-toggle flex items-center justify-center">
@@ -255,132 +262,111 @@
                     </button>
                   </div>
                   <br>
-                  <div class="rounded-box flex w-full max-w-full items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black text-left">
-                    <code>
-                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
-                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo systemctl enable apache2</span>
-                    </code>
-                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
-                      <span class="tooltip-toggle flex items-center justify-center">
-                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
-                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
-                      </span>
-                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
-                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
-                      </span>
-                    </button>
+                  <p class="pb-2">
+                    Esta es la estructura del playbook completa, y ahora pasaremos a ver que contiene cada directorio y que debemos cambiar y configurar:
+                  </p>
+                  <div class="w-full overflow-x-auto">
+                    <div class="mockup-code w-full">
+                      <pre><code>ansible-lamp/</code></pre>
+                      <pre><code>├── files/</code></pre>
+                      <pre><code>│   └── apache.conf.j2</code></pre>
+                      <pre><code>├── vars/</code></pre>
+                      <pre><code>│   └── default.yml</code></pre>
+                      <pre><code>├── inventory.ini</code></pre>
+                      <pre><code>├── playbook.yml</code></pre>
+                      <pre><code>└── README.md -> (Guía interna e información útil)</code></pre>
+                    </div>
                   </div>
 
                 <!-- PASO 2 - GUÍA -->
                 <h2 class="text-2xl font-bold text-base-content pb-3 pt-10">
-                  Paso 2 - Creación de host virtual
+                  Paso 2 - Revisión de ficheros
                 </h2>
                 <div>
                   <p class="pb-2">
-                    Vamos a crear una copia del directorio web de ejemplo, en ese directoriose guardará el contenido del servidor web, ahí es donde se pondrían los archivos de nuestra página web:
+                    Vamos a empezar viendo que contiene el fichero "apache.conf.j2", este fichero contiene una plantilla de apache2 que usará 
+                    Ansible para que en el proceso de montaje use esa configure el servidor web de LAMP, este fichero usa variables que estableceremos en otro fichero 
+                    si quieres cambiar algo recomiendo usar variables para ello (las variables van entre llaves dobles {{}}):
                   </p>
-
-                  <div class="rounded-box flex w-full max-w-full items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black text-left">
-                    <code>
-                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
-                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">cp -r /var/www/html /var/www/mi-web</span>
-                    </code>
-                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
-                      <span class="tooltip-toggle flex items-center justify-center">
-                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
-                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
-                      </span>
-                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
-                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
-                      </span>
-                    </button>
-                  </div>
-
-                  <p class="pt-5 pb-2">
-                    Ahora vamos a copiar el fichero de configuración por defecto de apache2 para poder configurar nuestro servidor web:
-                  </p>
-
-                  <div class="rounded-box flex w-full max-w-full items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black text-left">
-                    <code>
-                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
-                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">cd /etc/apache2/sites-available</span>
-                    </code>
-                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
-                      <span class="tooltip-toggle flex items-center justify-center">
-                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
-                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
-                      </span>
-                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
-                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
-                      </span>
-                    </button>
-                  </div>
-                  <br>
-                  <div class="rounded-box flex w-full max-w-full items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black text-left">
-                    <code>
-                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
-                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">cp 000-default.conf mi-server.conf</span>
-                    </code>
-                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
-                      <span class="tooltip-toggle flex items-center justify-center">
-                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
-                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
-                      </span>
-                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
-                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
-                      </span>
-                    </button>
-                  </div>
-
-                  <p class="pt-5 pb-2">
-                    Entraremos al fichero de configuración del host virtual de apache2 y editaremos el contenido según el fichero de abajo, reemplazando por los datos necesarios, en la guía se usa el puerto por defecto, y datos de ejemplo:
-                  </p>
-
-                  <div class="rounded-box flex w-full max-w-full items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black text-left">
-                    <code>
-                      <span class="text-green-500 me-2 text-lg font-medium">$</span>
-                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">nano mi-server.conf</span>
-                    </code>
-                    <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
-                      <span class="tooltip-toggle flex items-center justify-center">
-                        <span class="js-clipboard-default icon-[tabler--clipboard] size-6 transition text-secondary-content"></span>
-                        <span class="js-clipboard-success icon-[tabler--clipboard-check] text-secondary-content hidden size-6"></span>
-                      </span>
-                      <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible" role="tooltip">
-                        <span class="tooltip-body js-clipboard-success-text">Copiar</span>
-                      </span>
-                    </button>
-                  </div>
                   <br>
                   <div class="w-full overflow-x-auto">
                     <div class="mockup-code w-full">
-                      <pre data-prefix="1"><code>&lt;VirtualHost *:80&gt;</code></pre>
-                      <pre data-prefix="2"><code>   # Dirección de correo del administrador/contacto de la web</code></pre>
-                      <pre data-prefix="3"><code>   ServerAdmin webmaster@localhost</code></pre>
-                      <pre data-prefix="4"><code>   # Ruta al fichero raíz de la web, si se deja vacío se interpretará que el fichero se llama "index.html"</code></pre>
-                      <pre data-prefix="5"><code>   DocumentRoot /var/www/mi-web/(nombre del fichero raiz o vacío)</code></pre>
-                      <pre data-prefix="6"><code>   # En este campo se indicará el nombre de dominio que se va a usar para acceder a la web,</code></pre>
-                      <pre data-prefix="7"><code>   # si no se pone se tendrá que acceder con la ip especificada en la linea 1, en este caso la ip del server.</code></pre>
-                      <pre data-prefix="8"><code>   ServerName ejemplo.com</code></pre>
-                      <pre data-prefix="9"><code>   # Configuraciones extras para el servidor web...</code></pre>
-                      <pre data-prefix="1"><code>&lt;VirtualHost&gt;</code></pre>
+                      <pre><code>apache.conf.j2</code></pre>
+                      <pre></pre>
+                      <pre data-prefix="1"><code>&lt;VirtualHost *:{{ http_port }}&gt;</code></pre>
+                      <pre data-prefix="2"><code>   ServerName {{ http_host }}</code></pre>
+                      <pre data-prefix="3"><code>   #ServerAlias www.{{ http_host }}</code></pre>
+                      <pre data-prefix=""><code>   ...</code></pre>
+                      <pre data-prefix="14"><code>&lt;/VirtualHost&gt;</code></pre>
                     </div>
                   </div>
-                </div>
+                  <br>
+
+                  <p class="pt-5 pb-2">
+                    Vamos a ver ahora el fichero donde se establecen las variables "default.yml", en este fichero es importante cambiar todas las variables de MySQL como mínimo, por 
+                    motivos de seguridad; aqui también podemos cambiar la configuración de apache como el dominio o el puerto que usará:
+                  </p>
+
+                  <div class="w-full overflow-x-auto">
+                    <div class="mockup-code w-full">
+                      <pre><code>default.yml</code></pre>
+                      <pre></pre>
+                      <pre data-prefix="">...<code></code></pre>
+                      <pre data-prefix="1">mysql_root_password: "example_root_password"<code></code></pre>
+                      <pre data-prefix="2">mysql_db: "demo_db"<code></code></pre>
+                      <pre data-prefix="3">mysql_user: "demo_user"<code></code></pre>
+                      <pre data-prefix="4">mysql_password: "demo_pass123"<code></code></pre>
+                      <pre data-prefix="">...<code></code></pre>
+                    </div>
+                  </div>
+                  <br>
+                  <p class="pt-5 pb-2">
+                    Este es el fihcero principal del playbook, "playbook.yml", el cual contiene todas las instruccioens y pasos que va a seguir Ansible 
+                    para instalar y configurar LAMP, este es el fichero más largo del playbook puedes modificar este archivo a tu gusto si tienes conocimientos de Ansible:
+                  </p>
+
+                  <div class="w-full overflow-x-auto">
+                    <div class="mockup-code w-full">
+                      <pre><code>playbook.yml</code></pre>
+                      <pre></pre>
+                      <pre data-prefix="1">- hosts: all<code></code></pre>
+                      <pre data-prefix="2">  become: true<code></code></pre>
+                      <pre data-prefix="3">  vars_files:<code></code></pre>
+                      <pre data-prefix="4">    - vars/default.yml<code></code></pre>
+                      <pre data-prefix="">...<code></code></pre>
+                    </div>
+                  </div>
+
+                  <p class="pt-5 pb-2">
+                    Ahora por último veremos el fichero "inventory.ini" el cual contiene una lista de los dispositivos en los cuales vamos a instalar LAMP:
+                  </p>
+
+                  <div class="w-full overflow-x-auto">
+                    <div class="mockup-code w-full">
+                      <pre><code>inventory.ini</code></pre>
+                      <pre></pre>
+                      <pre data-prefix="1">[nombre]<code></code></pre>
+                      <pre data-prefix="2">   (IP example)<code></code></pre>
+                      <pre data-prefix="3">   example.com<code></code></pre>
+                      <pre data-prefix="">... o ...<code></code></pre>
+                      <pre data-prefix="1">(IP o dominio)<code></code></pre>
+                    </div>
+                  </div>
+                  <br>
 
                 <!-- PASO 3 - GUÍA -->
                 <h2 class="text-2xl font-bold text-base-content pb-3 pt-10">
-                  Paso 3 - Habilitar el sitio y aplicar cambios
+                  Paso 3 - Comprobaciones y ejecución
                 </h2>
                 <div>
                   <p class="pb-2">
-                    Antes de acabar hay que habilitar el sitio web para que sea accesible:
+                    Antes de ejecutar el playbook podemos probar si tenemos acceso a todas las máquinas que están en "inventory.ini" con el comando:
                   </p>
 
                   <div class="rounded-box flex w-full max-w-full items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black text-left">
                     <code>
                       <span class="text-green-500 me-2 text-lg font-medium">$</span>
-                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo a2ensite mi-server.conf</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">ansible all -i inventory.ini -m ping</span>
                     </code>
                     <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
                       <span class="tooltip-toggle flex items-center justify-center">
@@ -393,13 +379,14 @@
                     </button>
                   </div>
                   <p class="pb-2 pt-5">
-                    Y por último vamos a aplicar todos los cambios, esto se hace reiniciando el servicio de apache2, y si todo ha salido bien ya tendremos listo nuestro servidor web:
+                    Ejecución del playbook, vamos a ejecutar el playbook, si no te funciona con este comando, puedes probar con los otros que aparecen en el README general del fichero 
+                    zip del playbook.
                   </p>
 
                   <div class="rounded-box flex w-full max-w-full items-center justify-between gap-x-4 px-4 py-3 shadow-base-300/20 shadow-sm bg-black text-left">
                     <code>
                       <span class="text-green-500 me-2 text-lg font-medium">$</span>
-                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">sudo systemctl restart apache2</span>
+                      <span id="clipboard-tooltip-on-hover" class="text-secondary-content">ansible-playbook -i inventory.ini playbook.yml</span>
                     </code>
                     <button type="button" class="js-clipboard tooltip" aria-label="Copy text to clipboard" data-clipboard-target="#clipboard-tooltip-on-hover" data-clipboard-action="copy" data-clipboard-success-text="Copiado!">
                       <span class="tooltip-toggle flex items-center justify-center">
@@ -412,7 +399,8 @@
                     </button>
                   </div>
                   <p class="pt-5">
-                    Con esto nuestra web ya debería de estar accesible a través del navegador web, accede desde del dominio o IP según tu configuración.
+                    Con esto ya empezaremos a ver como se instala el LAMP con el playbook, solo hay que dejar terminar el proceso, y si todo ha salido bien, ya tendremos nuestro LAMP instalado, si tienes algún problema revisa 
+                    los errores comunes dentro del README en el zip del playbook.
                   </p>
                 </div>
 

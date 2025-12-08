@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../css/output.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/font.css">
-  <title>Linux</title>
-  <link rel="icon" type="image/x-icon" href="../img/Linux-Logo-PNG-Transparent.png">
+  <link href="../../css/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/font.css">
+  <title>Burp Suite</title>
+  <link rel="icon" type="image/x-icon" href="../../img/Linux-Logo-PNG-Transparent.png">
 </head>
 <body>
 <div class="bg-base-200 flex min-h-screen flex-col">
@@ -17,14 +17,14 @@
         <div class="flex items-center w-full">
           <!-- LOGO + TÍTULO -->
           <div class="flex items-center">
-            <a class="link" href="../../">
+            <a class="link" href="../../../">
               <div class="avatar mr-5">
                 <div class="w-15 rounded-full">
-                  <img src="../img/Linux-Logo-PNG-Transparent.png" alt="avatar 1" />
+                  <img src="../../img/Linux-Logo-PNG-Transparent.png" alt="avatar 1" />
                 </div>
               </div>
             </a>
-            <a class="link text-base-content link-neutral text-xl font-bold no-underline whitespace-nowrap" href="../../">
+            <a class="link text-base-content link-neutral text-xl font-bold no-underline whitespace-nowrap" href="../../../">
               El rincón de Tux
             </a>
           </div>
@@ -82,25 +82,25 @@
     <div class="drawer-body px-2 pt-5">
       <ul class="menu p-0">
         <li>
-          <a href="../../" class="flex items-center gap-4">
+          <a href="../../../" class="flex items-center gap-4">
             <span class="icon-[tabler--home] size-5"></span>
             Inicio
           </a>
         </li>
         <li>
-          <a href="#" class="flex items-center gap-4">
+          <a href="../linux.html" class="flex items-center gap-4">
             <span class="icon-[tabler--book] size-5"></span>
             Linux
           </a>
         </li>
         <li>
-          <a href="./ciberseguridad.html" class="flex items-center gap-4">
+          <a href="../ciberseguridad.html" class="flex items-center gap-4">
             <span class="icon-[tabler--device-desktop-analytics] size-5"></span>
             Ciberseguridad
           </a>
         </li>
         <li>
-          <a href="./ansible.html" class="flex items-center gap-4">
+          <a href="../ansible.html" class="flex items-center gap-4">
             <span class="icon-[tabler--files] size-5"></span>
             Ansible
           </a>
@@ -138,7 +138,7 @@
               <!-- Banner -->
               <div class="w-full">
                 <img 
-                  src="../img/linux/linux-subpage-banner.png" 
+                  src="../../img/ciberseguridad/burpsuite-banner.png" 
                   alt="banner" 
                   class="w-full h-40 sm:h-52 md:h-60 lg:h-72 object-cover rounded-box"
                 />
@@ -149,8 +149,14 @@
 
                 <!-- Título -->
                 <h1 class="text-3xl font-bold text-base-content">
-                  El rincón de Tux - Linux
+                  Bypass de login inseguro con Burp Suite
                 </h1>
+
+                <!-- Autor -->
+                <div class="flex items-center gap-3 text-base-content/80">
+                  <span class="icon-[tabler--user] size-5"></span>
+                  <span class="font-medium">Saúl Baena Osuna</span>
+                </div>
 
                 <!-- Separación -->
                 <hr class="border-base-content/10" />
@@ -158,27 +164,83 @@
                 <!-- Texto de contenido -->
                 <div class="prose max-w-none text-justify text-lg">
                   <p>
-                    En esta sección descubrirás guías prácticas y detalladas para explorar todo lo que Linux tiene 
-                    para ofrecer. Aprenderás a configurar, optimizar y dominar tu entorno de manera progresiva, con 
-                    artículos pensados tanto para principiantes como para usuarios avanzados. Cada guía está diseñada 
-                    para que aprendas haciendo, experimentando y entendiendo cómo funcionan las cosas detrás de tu sistema, 
-                    convirtiendo Linux en un verdadero laboratorio de conocimiento y práctica.
+                    En este apartado exploraremos cómo analizar un login inseguro utilizando BurpSuite desde 
+                    una perspectiva totalmente ética y orientada a fortalecer la seguridad. Veremos cómo un 
+                    atacante podría aprovechar una mala implementación para intentar acceder sin autorización 
+                    y, sobre todo, aprenderemos a identificar estas debilidades para poder corregirlas. El objetivo 
+                    es comprender el riesgo, conocer la metodología básica de análisis para poder aplicar buenas prácticas 
+                    que permitan mejorar la protección de nuestras aplicaciones y sistemas.
+                    <br><br>
+                    Antes de empezar asegurate de tener el entorno preparado y en este caso usaremos una maquina virtual con 
+                    Kali para poder realizar la práctica en este caso se usa un servidor básico de python.
                   </p>
                   <br>
                   <hr class="border-base-content/10" />
                   <br>
                   
-                  <div class="card sm:card-side max-w-sm sm:max-w-full">
-                    <figure class="flex-shrink-0 w-2/4 sm:w-1/4 lg:w-1/5 mx-auto bg-secondary"><img src="../img/linux/apache2.png" class="w-full h-auto object-contain"/></figure>
-                    <div class="card-body bg-secondary flex-1 rounded-r-box">
-                      <h5 class="card-title mb-0.5"><a class="link text-secondary-content" href="./linux-subpages/apache2.html">Apache2 - Servidor web</a></h5>
-                      <p class="mb-2 text-secondary-content">Apache2 es un servidor web de código abierto que permite alojar y servir sitios web, gestionando las solicitudes de los navegadores y entregando el contenido de forma segura y eficiente.</p>
-                      <div class="card-actions">
-                        <button class="btn btn-primary" onclick="window.location.href='./linux-subpages/apache2.html'">Acceder</button>
-                      </div>
-                    </div>
-                  </div>
 
+                <!-- PASO 1 - GUÍA -->
+                <h2 class="text-2xl font-bold text-base-content pb-3">
+                  Paso 1 - Ejecutar Burp Suite, abrir su navegador y acceder a la web vulnerable
+                </h2>
+                <div>
+                  <p class="pb-2">
+                    En este paso vamos a ejecutar Burp Suite desde kali, después entramos al apartado Proxy donde abriremos su navegador web 
+                    dandole a "Open browser" y ahí accederemos a la web insegura, en este caso "dominio.local/login"
+                  </p>
+                  <img src="../../img/ciberseguridad/1.png" alt="">
+                  <br>
+                  <p class="pb-2">
+                    Al poner la url del panel de admin, nos redirigirá al panel de acceso de nuevo, ya que no tenemos las creedenciales de administrador.
+                  </p>
+                  <img src="../../img/ciberseguridad/2.png" alt="">
+                </div>
+
+                <!-- PASO 2 - GUÍA -->
+                <h2 class="text-2xl font-bold text-base-content pb-3 pt-10">
+                  Paso 2 - Recepción del paquete
+                </h2>
+                <div>
+                  <p class="pb-2">
+                    Ahora activamos el interceptador, dandole click a "intercept off" para cambiarlo a "intercept on" y volvemos a cambiar la url por la del panel de admin. 
+                    Como vemos hemos interceptado el paquete de petición para el panel de administrador.
+                  </p>
+                  <img src="../../img/ciberseguridad/3.png" alt="">
+                  <br>
+                  <p class="pb-2">
+                    Ahora vamos a interceptar la respuesta de esa petición, para eso le damos click derecho sobre el paquete > "Do intercept" > "Response to this request". 
+                    Por último le damos a "Forward" para que enviar la petición al servidor y recoger la respuesta de este.
+                  </p>
+                  <img src="../../img/ciberseguridad/4.png" alt="">
+                </div>
+
+                <!-- PASO 3 - GUÍA -->
+                <h2 class="text-2xl font-bold text-base-content pb-3 pt-10">
+                  Paso 3 - Modificación del paquete de respuesta
+                </h2>
+                <div>
+                  <p class="pb-2">
+                    Ahora vemos el paquete que nos ha devuelto el servidor, donde vemos que nos ha proporcionado un código de estado de 302 que significa que ha encontrado la 
+                    página, y vemos el contenido en código de la misma, donde pone la redirección hacia el "/login" que es el panel de inicio de sesión.
+                  </p>
+                  <img src="../../img/ciberseguridad/5.png" alt="">
+                  <br>
+                  <p class="pb-2">
+                    Cambiamos el código de estado de 302 a 200 el cual le indica al servidor que todo ha salido bien, y que se puede acceder.
+                    Le daremos a "Forward" para enviar el paquete modificado al server.
+                  </p>
+                  <img src="../../img/ciberseguridad/6.png" alt="">
+                </div>
+
+                <h2 class="text-2xl font-bold text-base-content pb-3 pt-10">
+                  Paso 3 - Panel de administración
+                </h2>
+                <div>
+                  <p class="pb-2">
+                    Como resultado tendremos acceso al panel de administración, por esto es importante de asegurar el login a la hora de programar las páginas 
+                    webs y preparar los servidores web.
+                  </p>
+                  <img src="../../img/ciberseguridad/7.png" alt="">
                 </div>
               </div>
             </div>
@@ -192,7 +254,7 @@
         <div class="h-25 pt-8 w-full xl:max-w-7xl mx-auto px-6">
           <div class="flex w-full flex-wrap items-center justify-between gap-4">
             <div class="flex items-center gap-2 text-xl font-bold text-base-content">
-              <img src="../img/Linux-Logo-PNG-Transparent.png" class="w-10" alt="avatar 1" />
+              <img src="../../img/Linux-Logo-PNG-Transparent.png" class="w-10" alt="avatar 1" />
               <span>El rincón de Tux</span>
             </div>
             <aside class="grid-flow-col items-center">
@@ -240,7 +302,9 @@
     </div>
   </div>
 
-<script src="../../node_modules/flyonui/flyonui.js"></script>
-<script src="../js/modal.js"></script>
+<script src="../../../node_modules/flyonui/flyonui.js"></script>
+<script src="../../../node_modules/clipboard/dist/clipboard.min.js"></script>
+<script src="../../../node_modules/flyonui/dist/helper-clipboard.js"></script>
+<script src="../../js/modal.js"></script>
 </body>
 </html>
